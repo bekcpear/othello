@@ -1,0 +1,17 @@
+* 0.2.1 released
+
+  New features :
+
+  - pkgconfig support, writting ai plugins more easily
+
+  - Two new docs : Installation Guide, and Plugins Writing Tutorial
+
+  - Be able disable python support when configuration
+
+  - new icons
+
+  Project News :
+
+  - New website is up
+
+    http://othello-game.sourceforge.net

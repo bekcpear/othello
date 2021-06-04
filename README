@@ -1,0 +1,26 @@
+This is a fork of https://sourceforge.net/p/othello-game/code/ci/master/tree
+And it is unmaintained!!!
+
+* What is Othello?
+
+Othello is a classic strategy game, also known as Reversi. Its objective is to
+finish the game with the greater amount of pieces (circles) of the same color.
+
+
+* Features
+
+This version of othello game supported these features:
+
+ - Cross Platformed (Currently support Linux and win32)
+
+ - Support writing ai plugin using C++, and also support writing ai plugin
+   in python script directly.
+
+ - Support network game.
+
+ - Support interface theme.
+
+
+Website : http://othello-game.sourceforge.net/
+Project Page : http://sourceforge.net/projects/othello-game/
+

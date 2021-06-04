@@ -1,0 +1,6 @@
+#!/bin/bash
+
+style=$(echo $1 | sed 's/^--//')
+shift
+$EMACS -q $SITEFLAG -batch -l $(dirname $0)/muse-init.el \
+    -f muse-batch-publish-files $style --output-dir=. "$@"

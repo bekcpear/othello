@@ -1,0 +1,522 @@
+# Chinese translations for othello package
+# othello 软件包的简体中文翻译.
+# Copyright (C) 2007 THE othello'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the othello package.
+# ZC Miao <hellwolf.misty@gmail.com>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: othello 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-05 06:04+0100\n"
+"PO-Revision-Date: 2009-07-05 15:52+0100\n"
+"Last-Translator: ZC Miao <hellwolf.misty@gmail.com>\n"
+"Language-Team: Chinese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .././wx/configmgr.cpp:87
+msgid "Application Default Language(English)"
+msgstr "程序默认语言(英语)"
+
+#: .././wx/configmgr.cpp:88
+msgid "System Default Language"
+msgstr "系统默认语言"
+
+#: .././wx/configmgr.cpp:245
+msgid "Choose a plugin directory"
+msgstr "选择插件目录"
+
+#: .././wx/playerchoosedialog.cpp:89
+msgid "Human Player"
+msgstr "人类玩家"
+
+#: .././wx/playerchoosedialog.cpp:91
+msgid ""
+"You control this player with your mouse. Use left click to go,and right "
+"click to pass"
+msgstr "你可以使用鼠标控制游戏。 鼠标左键是下棋，鼠标右键是放弃该轮"
+
+#: .././wx/playerchoosedialog.cpp:97
+msgid "Null Player"
+msgstr "无玩家"
+
+#: .././wx/playerchoosedialog.cpp:99
+msgid ""
+"This will not create any local player. It's used when playing network game"
+msgstr "不创建任何本地玩家。 用于进行网络游戏的时候，等待远程用户加入"
+
+#: .././wx/playerchoosedialog.cpp:150
+msgid "Argument Name"
+msgstr "参数名称"
+
+#: .././wx/playerchoosedialog.cpp:150 .././wx/playerchoosedialog.cpp:157
+msgid "Input text"
+msgstr "输入字符串"
+
+#: .././wx/playerchoosedialog.cpp:153
+msgid "Argument name should not contain '='"
+msgstr "参数不能包含等于号"
+
+#: .././wx/playerchoosedialog.cpp:154
+msgid "Invalid Arguments"
+msgstr "无效的参数"
+
+#: .././wx/playerchoosedialog.cpp:157
+msgid "Argument Value"
+msgstr "参数值"
+
+#: .././wx/wxothelloframe.cpp:93
+#, c-format
+msgid ""
+"Game Exception Catched : \n"
+"%s\n"
+msgstr ""
+"游戏客户端创建失败 : \n"
+"%s\n"
+
+#: .././wx/wxothelloframe.cpp:172
+#, c-format
+msgid ""
+"Load theme \"%s\" failed :\n"
+"%s\n"
+"Try to load default theme now"
+msgstr ""
+"载入主题\"%s\"失败：\n"
+"%s\n"
+"尝试载入默认主题"
+
+#: .././wx/wxothelloframe.cpp:177 .././wx/wxothelloframe.cpp:184
+#: .././wx/wxothelloframe.cpp:205 .././wx/wxothelloframe.cpp:212
+msgid "Theme System Warning"
+msgstr "主题系统警告"
+
+#: .././wx/wxothelloframe.cpp:181
+#, c-format
+msgid ""
+"Load default theme failed :\n"
+"%s\n"
+"Please check your installation"
+msgstr ""
+"载入默认主题失败：\n"
+"%s\n"
+"请检查程序是否正确安装"
+
+#: .././wx/wxothelloframe.cpp:227
+#, c-format
+msgid ""
+"Plugin system warning :\n"
+"%s\n"
+msgstr ""
+"插件系统警告：\n"
+"%s\n"
+
+#: .././wx/wxothelloframe.cpp:229
+msgid "Plugin System Warnings"
+msgstr "插件系统警告"
+
+#: .././wx/wxothelloframe.cpp:287
+#, c-format
+msgid ""
+"Player create failed :\n"
+"%s\n"
+msgstr ""
+"游戏服务器创建失败 :\n"
+"%s\n"
+
+#: .././wx/wxothelloframe.cpp:289
+msgid "Player Create Failed"
+msgstr "创建玩家失败"
+
+#: .././wx/wxothelloframe.cpp:296
+#, c-format
+msgid ""
+"Player create with warnings :\n"
+"%s\n"
+msgstr ""
+"创建玩家时得到警告：\n"
+"%s\n"
+
+#: .././wx/wxothelloframe.cpp:298
+msgid "Player Create Warning"
+msgstr "玩家创建警告信息"
+
+#: .././wx/wxothelloframe.cpp:314
+#, c-format
+msgid ""
+"Game server create failed :\n"
+"%s\n"
+msgstr ""
+"游戏服务器创建失败 : \n"
+"%s\n"
+
+#: .././wx/wxothelloframe.cpp:316 .././wx/wxothelloframe.cpp:337
+msgid "Create Server Failed"
+msgstr "创建游戏服务器失败"
+
+#: .././wx/wxothelloframe.cpp:325
+msgid "Input server address(localhost, foo.com:26417, etc...)"
+msgstr "输入服务器地址(如 localhost, foo.com:26417 等等)"
+
+#: .././wx/wxothelloframe.cpp:326
+msgid "Server Adress"
+msgstr "服务器地址"
+
+#: .././wx/wxothelloframe.cpp:336
+msgid "Invalid port number\n"
+msgstr "无效的端口号\n"
+
+#: .././wx/wxothelloframe.cpp:348
+#, c-format
+msgid ""
+"Game client create failed :\n"
+"%s\n"
+msgstr ""
+"游戏客户端创建失败 : \n"
+"%s\n"
+
+#: .././wx/wxothelloframe.cpp:350
+msgid "Create Client Failed"
+msgstr "创建游戏客户端失败"
+
+#: .././wx/wxothelloframe.cpp:380
+msgid "Stopping Game..."
+msgstr "正在停止游戏……"
+
+#: .././wx/wxothelloframe.cpp:433
+msgid ""
+"Othello is a classic strategy game, also known as Reversi. Its objective is "
+"to finish the game with the greater amount of pieces (circles) of the same "
+"color."
+msgstr ""
+"奥赛罗是一个经典的策略类游戏，也被称做\"Reversi\". 游戏的目标是在棋盘上布下尽"
+"量多的黑（白）方棋子"
+
+#: .././wx/wxothelloframe.cpp:451
+msgid "About wxOthello"
+msgstr "关于奥塞罗"
+
+#: .././wx/wxothelloframe.cpp:516
+msgid "Game stopped"
+msgstr "游戏结束"
+
+#: .././wx/wxothelloframe.cpp:538
+msgid "Game Infomation"
+msgstr "游戏信息"
+
+#: .././wx/wxothelloframe.cpp:584
+msgid "Waiting Players..."
+msgstr "等待玩家中……"
+
+#: .././wx/wxothelloframe.cpp:593
+msgid "Wait All Players Ready..."
+msgstr "等待所有玩家就绪..."
+
+#: .././wx/wxothelloframe.cpp:654
+#, c-format
+msgid "Turn of Black, step %d"
+msgstr "黑棋走棋，第%d步"
+
+#: .././wx/wxothelloframe.cpp:657
+#, c-format
+msgid "Turn of White, step %d"
+msgstr "白棋走棋，第%d步"
+
+#: .././wx/wxothelloframe.cpp:663
+msgid "Black Win!"
+msgstr "黑方获胜！"
+
+#: .././wx/wxothelloframe.cpp:672
+msgid "White Win!"
+msgstr "白方获胜！"
+
+#: .././wx/wxothelloframe.cpp:681
+msgid "Draw Game!"
+msgstr "平局！"
+
+#: .././wx/wxothelloframe.cpp:690
+msgid "Game Over"
+msgstr "游戏结束"
+
+#: .././wx/wxothelloframe.cpp:691
+msgid "Continue?"
+msgstr "是否继续？"
+
+#: .././wx/resources/frame.xrc.msgs.c:1
+msgid "Othello"
+msgstr "奥塞罗"
+
+#: .././wx/resources/frame.xrc.msgs.c:2
+msgid "&Game"
+msgstr "游戏(&G)"
+
+#: .././wx/resources/frame.xrc.msgs.c:3
+msgid "&Start"
+msgstr "开始"
+
+#: .././wx/resources/frame.xrc.msgs.c:4
+msgid "Single &Machine Game\tCtrl+1"
+msgstr "单机游戏(&1)\tCtrl+1"
+
+#: .././wx/resources/frame.xrc.msgs.c:5
+msgid "Start a single machine game"
+msgstr "开始单机游戏"
+
+#: .././wx/resources/frame.xrc.msgs.c:6
+msgid "Game &Server\tCtrl+2"
+msgstr "游戏服务器(&2)\tCtrl+2"
+
+#: .././wx/resources/frame.xrc.msgs.c:7
+msgid "Start a network game as server"
+msgstr "创建网络游戏服务器"
+
+#: .././wx/resources/frame.xrc.msgs.c:8
+msgid "Game &Client\tCtrl+3"
+msgstr "游戏客户端(&3)\tCtrl+3"
+
+#: .././wx/resources/frame.xrc.msgs.c:9
+msgid "Join a network game"
+msgstr "加入网络游戏"
+
+#: .././wx/resources/frame.xrc.msgs.c:10
+msgid "Select the type of game"
+msgstr "选择游戏类型"
+
+#: .././wx/resources/frame.xrc.msgs.c:11
+msgid "S&top\tCtrl+E"
+msgstr "结束(&E)\tCtrl+E"
+
+#: .././wx/resources/frame.xrc.msgs.c:12
+msgid "Stop the game"
+msgstr "结束游戏"
+
+#: .././wx/resources/frame.xrc.msgs.c:13
+msgid "&Restart\tCtrl+R"
+msgstr "重新开始(&R)\tCtrl+R"
+
+#: .././wx/resources/frame.xrc.msgs.c:14
+msgid "Restart the game"
+msgstr "重新开始游戏"
+
+#: .././wx/resources/frame.xrc.msgs.c:15
+msgid "&Players\tCtrl+P"
+msgstr "玩家(&P)\tCtrl+P"
+
+#: .././wx/resources/frame.xrc.msgs.c:16
+msgid "Config the players"
+msgstr "选择玩家"
+
+#: .././wx/resources/frame.xrc.msgs.c:17
+msgid "&Quit\tCtrl+Q"
+msgstr "退出(&Q)\tCtrl+Q"
+
+#: .././wx/resources/frame.xrc.msgs.c:18
+msgid "Exit program"
+msgstr "退出程序"
+
+#: .././wx/resources/frame.xrc.msgs.c:19
+msgid "&Settings"
+msgstr "设置(&S)"
+
+#: .././wx/resources/frame.xrc.msgs.c:20
+msgid "Prefere&nce"
+msgstr "选项(&n)"
+
+#: .././wx/resources/frame.xrc.msgs.c:21
+msgid "Configure program preference"
+msgstr "配置程序选项"
+
+#: .././wx/resources/frame.xrc.msgs.c:22
+msgid "&Help"
+msgstr "帮助(&H)"
+
+#: .././wx/resources/frame.xrc.msgs.c:23
+msgid "&About"
+msgstr "关于(&A)"
+
+#: .././wx/resources/frame.xrc.msgs.c:24
+msgid "About the program"
+msgstr "关于程序"
+
+#: .././wx/resources/frame.xrc.msgs.c:25
+msgid "BLACK"
+msgstr "黑方"
+
+#: .././wx/resources/frame.xrc.msgs.c:26 .././wx/resources/frame.xrc.msgs.c:27
+#: .././wx/resources/frame.xrc.msgs.c:29 .././wx/resources/frame.xrc.msgs.c:31
+msgid "0"
+msgstr "0"
+
+#: .././wx/resources/frame.xrc.msgs.c:28
+msgid ":"
+msgstr ":"
+
+#: .././wx/resources/frame.xrc.msgs.c:30
+msgid "WHITE"
+msgstr "白方"
+
+#: .././wx/resources/frame.xrc.msgs.c:32
+msgid "Debug Messages"
+msgstr "调试信息"
+
+#: .././wx/resources/frame.xrc.msgs.c:33
+msgid "Choose Player"
+msgstr "选择玩家"
+
+#: .././wx/resources/frame.xrc.msgs.c:34 .././wx/resources/frame.xrc.msgs.c:36
+#: .././wx/resources/frame.xrc.msgs.c:41 .././wx/resources/frame.xrc.msgs.c:43
+#: .././wx/resources/frame.xrc.msgs.c:45 .././wx/resources/frame.xrc.msgs.c:53
+#: .././wx/resources/frame.xrc.msgs.c:56
+msgid "unknown"
+msgstr "未知"
+
+#: .././wx/resources/frame.xrc.msgs.c:35
+msgid "VS"
+msgstr "对"
+
+#: .././wx/resources/frame.xrc.msgs.c:37
+msgid "Player A"
+msgstr "玩家甲"
+
+#: .././wx/resources/frame.xrc.msgs.c:38
+msgid "Player B"
+msgstr "玩家乙"
+
+#: .././wx/resources/frame.xrc.msgs.c:39
+msgid "Available Players"
+msgstr "所有的玩家"
+
+#: .././wx/resources/frame.xrc.msgs.c:40
+msgid "Player Infomation"
+msgstr "游戏信息"
+
+#: .././wx/resources/frame.xrc.msgs.c:42
+msgid "Summary:"
+msgstr "概述："
+
+#: .././wx/resources/frame.xrc.msgs.c:44
+msgid "Description:"
+msgstr "详细信息："
+
+#: .././wx/resources/frame.xrc.msgs.c:46
+msgid "Arguments"
+msgstr "参数"
+
+#: .././wx/resources/frame.xrc.msgs.c:47
+msgid "Add(&A)"
+msgstr "增加(&A)"
+
+#: .././wx/resources/frame.xrc.msgs.c:48
+msgid "Delete(&D)"
+msgstr "删除(&R)"
+
+#: .././wx/resources/frame.xrc.msgs.c:49
+msgid "Reset(&R)"
+msgstr "重置(&R)"
+
+#: .././wx/resources/frame.xrc.msgs.c:50
+msgid "Preference"
+msgstr "选项"
+
+#: .././wx/resources/frame.xrc.msgs.c:51
+msgid "Choose Language(*)"
+msgstr "选择语言（＊）"
+
+#: .././wx/resources/frame.xrc.msgs.c:52
+msgid "Current Language:"
+msgstr "当前语言："
+
+#: .././wx/resources/frame.xrc.msgs.c:54
+msgid "Choose Theme(*)"
+msgstr "选择主题（＊）"
+
+#: .././wx/resources/frame.xrc.msgs.c:55
+msgid "Current Theme:"
+msgstr "当前主题："
+
+#: .././wx/resources/frame.xrc.msgs.c:57
+msgid "Plugin Directories"
+msgstr "插件目录："
+
+#: .././wx/resources/frame.xrc.msgs.c:58
+msgid "Add"
+msgstr "增加"
+
+#: .././wx/resources/frame.xrc.msgs.c:59
+msgid "Remove"
+msgstr "删除"
+
+#: .././wx/resources/frame.xrc.msgs.c:60
+msgid "Move Up"
+msgstr "向上移动"
+
+#: .././wx/resources/frame.xrc.msgs.c:61
+msgid "Move Down"
+msgstr "向下移动"
+
+#: .././wx/resources/frame.xrc.msgs.c:62
+msgid "Game Server Configuration"
+msgstr "游戏服务器配置"
+
+#: .././wx/resources/frame.xrc.msgs.c:63
+msgid "Server TCP Port"
+msgstr "服务器TCP端口"
+
+#: .././wx/resources/frame.xrc.msgs.c:64
+msgid "Game Speed"
+msgstr "游戏速度"
+
+#: .././wx/resources/frame.xrc.msgs.c:65
+msgid "100"
+msgstr "100"
+
+#: .././wx/resources/frame.xrc.msgs.c:66
+msgid "200"
+msgstr "200"
+
+#: .././wx/resources/frame.xrc.msgs.c:67
+msgid "300"
+msgstr "300"
+
+#: .././wx/resources/frame.xrc.msgs.c:68
+msgid "400"
+msgstr "400"
+
+#: .././wx/resources/frame.xrc.msgs.c:69
+msgid "500"
+msgstr "500"
+
+#: .././wx/resources/frame.xrc.msgs.c:70
+msgid "600"
+msgstr "600"
+
+#: .././wx/resources/frame.xrc.msgs.c:71
+msgid "700"
+msgstr "700"
+
+#: .././wx/resources/frame.xrc.msgs.c:72
+msgid "800"
+msgstr "800"
+
+#: .././wx/resources/frame.xrc.msgs.c:73
+msgid ""
+"*NOTE* : Settings marked with '*' need to restart program to take effect"
+msgstr "＊注意＊ ： 标记星号的设置需要重启程序才能生效"
+
+#: .././players/lowai_plugin.cpp:47
+msgid "Lowai Player"
+msgstr "低智能电脑"
+
+#: .././players/lowai_plugin.cpp:48
+msgid "Othello Lowai Player. Use simple score measure technology."
+msgstr "奥塞罗低智能电脑。算法基于简单的记分技术。"
+
+#: .././players/python/silverfish.py:30
+msgid "Silverfish Player"
+msgstr "蠢蛋玩家"
+
+#: .././players/python/silverfish.py:31
+msgid ""
+"Silverfish player. Go position where the most amount of grids would be turned"
+msgstr "蠢蛋玩家。每次选择吃子最多的点走棋"

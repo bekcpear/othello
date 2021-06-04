@@ -1,0 +1,222 @@
+#author ZC Miao
+#title Othello Installation Guide (Ver 0.2.1)
+
+<contents>
+
+
+* 1. Introduction
+
+Othello is a classic strategy game, also known as Reversi. Its objective is to
+finish the game with the greater amount of pieces (circles) of the same color.
+
+This version of othello game supported these features:
+
+ - Cross Platformed (Currently support Linux and win32)
+
+ - Support writing ai plugin using C++, and also support writing ai plugin
+   in python script directly.
+
+ - Support network game.
+
+ - Support interface theme.
+
+
+* 2. Install from source under Linux
+
+** 2.1. Libraries dependented
+
+Before installation, you should make sure that the following packages have
+been installed on your system:
+
+ - wxWidget 2.6 or Higher(Tested under wxGTK port)
+ - python 2.3 or higher along with its development files
+ - Boost::thread Library
+ - Boost::python Library
+
+** 2.2. Download source
+
+You can find the latest source tarball from here :
+http://othello-game.sourceforge.net/en/Download.html
+
+** 2.3. Compile and Install
+
+If you want everythings to be compiled and installed :
+
+<example>
+$ ./configure –-prefix=/path/to/install/root
+$ make && make install
+</example>
+
+*Notes:*
+
+ - If you do not want the python support, use '--disable-python' option of
+configure script.
+
+ - If you do not want the command line version of othello, use
+'--disable-cli' configuration option.
+
+ - If you do not want the wxWidget GUI version of othello, use
+'--disable-wx' configuration option.
+
+ - If your boost libraries is shipped with a specific suffix, such as
+   libboost_python-mt-1_34_1.so. You can run configuraton like this : 
+<example>
+$ ./configure --prefix=/path/to/install/root LIBBOOST_SUFFIX=-mt-1_34_1
+</example>
+
+
+Now, if everything goes well, you'll get :
+<example>
+othello-0.2.1/
+|-- bin
+|   |-- othello-cli
+|   |-- wxothello
+|-- include
+|   |-- othello
+|   |   |-- 0.2.1
+|   |   |   |-- othello
+|   |   |   |   |-- board.hpp
+|   |   |   |   |-- game.hpp
+|   |   |   |   |-- intl_config.hpp
+|   |   |   |   |-- intl.hpp
+|   |   |   |   |-- networkgame.hpp
+|   |   |   |   |-- observer.hpp
+|   |   |   |   |-- player.hpp
+|   |   |   |   |-- player_plugin.hpp
+|   |   |   |   |-- player_plugin_manager.hpp
+|-- lib
+|   |-- libothello.la
+|   |-- libothello-python.la
+|   |-- libothello-python.so
+|   |-- libothello-python.so.2
+|   |-- libothello-python.so.2.0.1
+|   |-- libothello.so
+|   |-- libothello.so.2
+|   |-- libothello.so.2.0.1
+|   |-- othello
+|   |   |-- 0.2
+|   |   |   |-- players
+|   |   |-- 0.2.1
+|   |   |   |-- players
+|   |   |   |   |-- lowai.so
+|   |   |   |   |-- python
+|   |   |   |   |   |-- silverfish.py
+|   |   |   |   |-- python.so
+|   |-- pkgconfig
+|   |   |-- othello.pc
+|-- share
+|   |-- locale
+|   |   |-- zh_CN
+|   |   |   |-- LC_MESSAGES
+|   |   |   |   |-- othello.mo
+|   |-- wxothello
+|   |   |-- 0.2.1
+|   |   |   |-- frame.xrc
+|   |   |   |-- themes
+|   |   |   |   |-- default
+|   |   |   |   |   |-- background.png
+|   |   |   |   |   |-- black.png
+|   |   |   |   |   |-- white.png
+|   |   |   |   |-- iagno
+|   |   |   |   |   |-- background.png
+|   |   |   |   |   |-- black.png
+|   |   |   |   |   |-- white.png
+|   |   |   |-- wxothello.ico
+|   |   |   |-- wxothello.png
+`
+22 directories, 33 files
+</example>
+
+"wxothello" is the wx GUI frontend of the game.
+
+"othello-cli" is a command line interface alternative version usually used
+to test ai plugins.
+
+Dot so files under <approot>/lib/othello/version/players is ai plugins
+writen in c++.
+
+The "python.so" c++ plugin can read python ai plugins under the below python
+directory, such as "silverfish.py".
+
+** 2.4. Configurations
+
+By click menu settings->preference :
+
+ - You can choose your interface language. By default it is setting according
+   your system language setting.
+
+ - The application theme, currently two themes is available : default and
+   iagno.
+
+ - Plugins directory. If you want to write your own python ai plugins, you
+   can just add a directory here and put your python script in the python
+   subdirecoty of that directory you added.
+
+ - Game server TCP port
+
+ - Game speed
+
+The configurations are stored in $HOME/.wxothello file.
+
+** 2.5. Play
+
+Theres's three game mode : Single Machine Game(Ctrl+1),  Game Server
+(Ctrl+2), Game Client(Ctrl+3).
+
+Before player the game, you need to choose player type firstly by clicking
+menu game->players. Currently you can choose:
+
+ - human
+
+   The human player.
+
+ - null
+
+   This player is used when network game for waiting remote player to join.
+
+ - lowai
+
+   A C++ sample plugin, which is at <pluginsdir>/lowai.so (Source code is in
+   source tarball).
+
+ - python/SilverFish
+
+   A Python sample plugin, which is at <pluginsdir>/python/silverfish.py.
+
+
+Now you can simply click game->start to rock the game. 
+
+
+* 3. Install on Windows
+
+** 3.1. Before installation
+
+To use the complete feature of software, you should have Python 2.4.x
+preinstalled on your windows system. The newest version of Python 2.4.x
+serials is 2.4.4 whic is available here:
+http://www.python.org/ftp/python/2.4.4/python-2.4.4.msi
+Just download and install the file is enough.
+
+** 3.2. Downloading othello win32 version
+
+Check out the latest win32 version from here
+http://othello-game.sourceforge.net/en/Download.html
+
+** 3.3. Installation
+
+This win32 version is a extract-and-run software. Click the wxothello.exe
+to launch the main program.
+
+** 3.4. Configurations and Play
+
+The configurations and usage is the same as its linux version.
+
+The configurations is stored at registry key: <HKCU>/Software/wxothello
+
+
+* 4. More about Othello
+
+Project Home Page : http://othello-game.sourceforge.net/
+
+Project Page : http://sourceforge.net/projects/othello-game/
+

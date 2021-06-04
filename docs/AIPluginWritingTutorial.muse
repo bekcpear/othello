@@ -1,0 +1,281 @@
+#author ZC Miao
+#title AI Plugin Writing Tutorial
+
+<contents>
+
+* 1. Writing AI Plugins in C++
+
+A C++ plugin is a dynamic library file named as *xxx.so* located at
+*/path/to/othello-0.2.1/lib/othello/0.2.1/players/*.
+
+** 1.1 Register players
+
+Every plugin has a *extern "c"* indicated function called
+*othello_player_plugin_init*, in which you register the new player(s)'
+infomation. For example :
+
+<source lang="cpp">
+#include "othello/player_plugin.hpp"
+
+using namespace othello;
+
+...
+
+static int create_player(othello_player_plugin_node *phdl,
+                         arg_node *args,
+                         othello::Player** p,
+                         char **errstr){
+  (void)phdl;
+  (void)args;
+  (void)errstr;
+  *p = new PlayerExample();
+  return 0;
+}
+
+static void release_player(othello_player_plugin_node *phdl,
+                           othello::Player *p){
+  (void)phdl;
+  delete p;
+}
+
+extern "C" int othello_player_plugin_init(othello_player_plugin *phdl,
+                                          const char * *plugindirs,
+                                          char **errstr){
+  (void)plugindirs;
+  (void)errstr;
+  phdl->nodes = new othello_player_plugin_node*[1];
+  phdl->nodes[0] = new othello_player_plugin_node;
+  phdl->nodes[0]->subname = NULL;
+  phdl->nodes[0]->summary = "Example C++ Plugin";
+  phdl->nodes[0]->description = "Othello example c++ plugin";
+  phdl->nodes[0]->data = NULL;
+  phdl->nodes[0]->create_player = &create_player;
+  phdl->nodes[0]->release_player = &release_player;
+  phdl->num = 1;
+  phdl->data = NULL;
+  return 0;
+}
+
+extern "C" void othello_player_plugin_fini(othello_player_plugin *phdl){
+  (void)phdl;
+  delete[] phdl->nodes;
+}
+
+</source>
+
+If this plugin is named example.so, then you player id is *example*. You can
+also register multiple players here, but you should fill the subname member
+of structure *othello_player_plugin*, your player id then would be
+*example/subname*.
+
+structure *othello_player_plugin* defined in othello/player_plugin.hpp
+<source lang="cpp">
+typedef struct _othello_player_plugin_node{
+  const char *subname;
+  const char *summary;
+  const char *description;
+  void *data;
+  /* 
+   * create a new player
+   *
+   * args is a NULL terminated array
+   * errstr is (if) allocated by plugin, and will be freed by caller
+   * return 0 on success, return other value on failed
+   */
+  int (*create_player)(struct _othello_player_plugin_node *plugin_node,
+                       arg_node *args,
+                       othello::Player**,
+                       char **errstr);
+  void (*release_player)(struct _othello_player_plugin_node *plugin_node,
+                         othello::Player*);
+}othello_player_plugin_node;
+</source>
+
+** 1.2 Class Player
+
+Every player should derive from class *othello::Player* :
+
+<source lang="cpp">
+class Player : public Subject<PlayerObserver>{
+  int isready;
+  CHESS_SIDE myside;
+
+public:
+  Player();
+  virtual ~Player();
+
+public:
+  inline int is_ready(){return isready;}
+  inline CHESS_SIDE get_myside(){return myside;}
+
+  /* called by inherited player type (to inform owner) */
+public:
+  void ready();
+  void go(int x, int y);
+  void pass();
+  void quit_game();
+
+  /* called by player owner (to inform player) */
+public:
+  void set_myside(CHESS_SIDE);
+  void prepare();
+  void get_turn(Board board);
+  void end_game();
+
+protected:
+  virtual void do_set_myside(CHESS_SIDE){}
+  virtual void do_prepare(){ready();}
+  virtual void do_get_turn(Board &){};
+  virtual void do_end_game(){};
+};
+</source>
+
+The protected virtual member functions are overloadable where you write your
+ai logic. For example :
+
+<source lang="cpp">
+#include "othello/player.hpp"
+
+...
+
+class PlayerExample : public Player{
+protected:
+  virtual void do_get_turn(Board &board){
+    int i(64);
+    while(i--){
+      std::vector<int> a;
+      if(board.try_go(Board::flat2x(i), Board::flat2y(i), get_myside(), true, &a) == Board::GO_OK)
+        go(Board::flat2x(i), Board::flat2y(i));
+    }
+  }
+public:
+  PlayerExample(){}
+};
+
+</source>
+
+** 1.3 Class Board
+
+const member function of class *Board*.
+
+<source lang="cpp">
+class Board : public Subject<BoardObserver>{
+  enum CHESS_GRID{NONE, BLACK, WHITE};
+  typedef CHESS_GRID CHESS_SIDE;
+
+  inline int gettotalnum()const;
+  inline int getnum(CHESS_GRID side)const;
+  inline CHESS_GRID getgrid(int x, int y)const;
+  inline CHESS_SIDE whose_turn()const;
+  inline int getstep()const;
+  int vital_grids(CHESS_SIDE)const;
+
+  enum GO_RESULT{
+    GO_OK = 0,
+    GO_GRID_OCCUPIED,
+    GO_NO_GRID_TO_TURN,
+    GO_INVAL
+  };
+  /*
+   * continue_when_ok : continue the search when find a vital grid
+   * plist : a vector of vital grids
+   *
+   */
+  GO_RESULT try_go(int x, int y,
+                   CHESS_SIDE myside,
+                   bool continue_when_ok = false,
+                   std::vector<int> *plist = NULL)const;
+};
+</source>
+
+** 1.4 Code Organize
+
+Example makefile :
+
+<example>
+OTHELLO_ROOT = /usr
+OTHELLO_FLAGS = $(shell \
+        PKG_CONFIG_PATH=$(OTHELLO_ROOT)/lib/pkgconfig \
+        pkg-config othello --cflags --libs)
+OTHELLO_AIPLUGINSDIR = $(shell \
+        PKG_CONFIG_PATH=$(OTHELLO_ROOT)/lib/pkgconfig \
+        pkg-config othello --variable=aipluginsdir)
+
+example.so : example.cpp
+        gcc -shared $(OTHELLO_FLAGS) $< -o $@
+
+install : example.so
+        install -m755 $< $(OTHELLO_AIPLUGINSDIR)/
+
+uninstall :
+        rm -f $(OTHELLO_AIPLUGINSDIR)/example.so
+
+clean :
+        rm -f example.so
+</example>
+
+And build a plugin like this :
+
+<example>
+$ make OTHELLO_ROOT=/path/to/othello-0.2.1
+</example>
+
+** 1.5 Full Example
+
+A full example c++ plugin example is avalable here :
+
+ - [[http://othello-game.sourceforge.net/en/archives/0.2.1/sample_plugins/cpp][View it online]]
+ - [[http://othello-game.sourceforge.net/en/archives/0.2.1/sample_plugins/sample_cpp_plugin.tar.gz][Download sample_cpp_plugin.tar.gz]]
+
+And a more usable example is located in source code.
+
+
+* 2. Writing AI Plugins in Python
+
+A python plugin is a py script named xxx.py at
+*/path/to/othello-0.2.1/lib/othello/0.2.1/players/python*. It's more easy for
+writing than a c++ plugin, you need no compiation, just a plain text script
+is enough.
+
+** 1. Sample python plugin
+
+The SilverFish plugin :
+
+<source lang="python">
+from othello import *
+
+_ = gettext
+
+class SilverFish(Player):
+    def do_get_turn(self, board):
+        asize = 0
+        ax = 0
+        ay = 0
+        for x in range(8):
+            for y in range(8):
+                alist = []
+                result = board.try_go(x, y, self.get_myside(), 1, alist)
+                if result == GO_RESULT.GO_OK :
+                    if len(alist) >  asize :
+                        asize = len(alist)
+                        ax = x
+                        ay = y
+                        pass
+                    pass
+                pass
+            pass
+        self.go(ax, ay)
+
+class SilverFishCreator(PlayerCreator):
+    def create(self, args):
+        return SilverFish()
+
+creators.register_player('Silverfish',
+                         _('Silverfish Player'),
+                         _('Silverfish player. '
+                           'Go position where the most amount of grids would be turned'),
+                         SilverFishCreator())
+</source>
+
+ - [[http://othello-game.sourceforge.net/en/archives/0.2.1/sample_plugins/python/silverfish.py][Download silverfish.py]]
+

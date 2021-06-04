@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource version="2.3.0.1">
+  <object class="wxFrame" name="frame_othello" subclass="MyFrame">
+    <icon>wxothello.png</icon>
+    <centered>1</centered>
+    <style>wxCAPTION|wxSTAY_ON_TOP|wxSYSTEM_MENU|wxCLOSE_BOX|wxMINIMIZE_BOX</style>
+    <title>Othello</title>
+    <object class="wxMenuBar" name="frame_othello_menubar">
+      <object class="wxMenu">
+        <label>&amp;Game</label>
+        <object class="wxMenu" name="menu_start">
+          <label>&amp;Start</label>
+          <object class="wxMenuItem" name="menu_start_single">
+            <label>Single &amp;Machine Game\tCtrl+1</label>
+            <help>Start a single machine game</help>
+          </object>
+          <object class="wxMenuItem" name="menu_start_server">
+            <label>Game &amp;Server\tCtrl+2</label>
+            <help>Start a network game as server</help>
+          </object>
+          <object class="wxMenuItem" name="menu_start_client">
+            <label>Game &amp;Client\tCtrl+3</label>
+            <help>Join a network game</help>
+          </object>
+          <help>Select the type of game</help>
+        </object>
+        <object class="wxMenuItem" name="menu_stop">
+          <label>S&amp;top\tCtrl+E</label>
+          <help>Stop the game</help>
+        </object>
+        <object class="wxMenuItem" name="menu_restart">
+          <label>&amp;Restart\tCtrl+R</label>
+          <help>Restart the game</help>
+        </object>
+        <object class="separator"/>
+        <object class="wxMenuItem" name="menu_players">
+          <label>&amp;Players\tCtrl+P</label>
+          <help>Config the players</help>
+        </object>
+        <object class="separator"/>
+        <object class="wxMenuItem" name="wxID_EXIT">
+          <label>&amp;Quit\tCtrl+Q</label>
+          <bitmap stock_id="wxART_QUIT"></bitmap>
+          <help>Exit program</help>
+        </object>
+      </object>
+      <object class="wxMenu">
+        <label>&amp;Settings</label>
+        <object class="wxMenuItem" name="wxID_PROPERTIES">
+          <label>Prefere&amp;nce</label>
+          <help>Configure program preference</help>
+        </object>
+      </object>
+      <object class="wxMenu">
+        <label>&amp;Help</label>
+        <object class="wxMenuItem" name="wxID_ABOUT">
+          <label>&amp;About</label>
+          <help>About the program</help>
+        </object>
+      </object>
+    </object>
+    <object class="wxBoxSizer">
+      <orient>wxVERTICAL</orient>
+      <object class="sizeritem">
+        <object class="wxPanel">
+          <object class="wxBoxSizer">
+            <orient>wxHORIZONTAL</orient>
+            <object class="sizeritem">
+              <object class="wxPanel" name="window_board"/>
+              <option>8</option>
+              <flag>wxEXPAND</flag>
+            </object>
+            <object class="sizeritem">
+              <object class="wxPanel" name="panel_info">
+                <object class="wxBoxSizer">
+                  <orient>wxVERTICAL</orient>
+                  <object class="sizeritem">
+                    <object class="wxStaticText" name="">
+                      <label>BLACK</label>
+                      <style>wxALIGN_CENTRE</style>
+                      <fg>#000000</fg>
+                      <font>
+                        <size>16</size>
+                        <family>roman</family>
+                        <style>normal</style>
+                        <weight>bold</weight>
+                        <underlined>0</underlined>
+                        <face>Serif</face>
+                      </font>
+                    </object>
+                    <flag>wxEXPAND</flag>
+                  </object>
+                  <object class="sizeritem">
+                    <flag>wxEXPAND</flag>
+                    <object class="wxStaticText" name="label_blacknum">
+                      <label>0</label>
+                      <style>wxALIGN_CENTRE|wxST_NO_AUTORESIZE</style>
+                      <font>
+                        <size>72</size>
+                        <family>swiss</family>
+                        <style>normal</style>
+                        <weight>bold</weight>
+                        <underlined>0</underlined>
+                        <face>Sans</face>
+                      </font>
+                    </object>
+                  </object>
+                  <object class="spacer">
+                    <option>1</option>
+                  </object>
+                  <object class="sizeritem">
+                    <object class="wxBoxSizer">
+                      <orient>wxHORIZONTAL</orient>
+                      <object class="sizeritem">
+                        <object class="wxStaticText" name="label_a_winnum">
+                          <label>0</label>
+                          <style>wxALIGN_RIGHT|wxST_NO_AUTORESIZE</style>
+                          <fg>#FFA500</fg>
+                          <font>
+                            <size>12</size>
+                            <family>swiss</family>
+                            <style>normal</style>
+                            <weight>normal</weight>
+                            <underlined>0</underlined>
+                            <face>Sans</face>
+                          </font>
+                        </object>
+                        <option>1</option>
+                        <flag>wxEXPAND</flag>
+                      </object>
+                      <object class="spacer">
+                        <size>10,0</size>
+                      </object>
+                      <object class="sizeritem">
+                        <object class="wxStaticText">
+                          <label>:</label>
+                        </object>
+                      </object>
+                      <object class="spacer">
+                        <size>10,0</size>
+                      </object>
+                      <object class="sizeritem">
+                        <object class="wxStaticText" name="label_b_winnum">
+                          <label>0</label>
+                          <style>wxALIGN_LEFT|wxST_NO_AUTORESIZE</style>
+                          <fg>#FFA500</fg>
+                          <font>
+                            <size>12</size>
+                            <family>swiss</family>
+                            <style>normal</style>
+                            <weight>normal</weight>
+                            <underlined>0</underlined>
+                            <face>Sans</face>
+                          </font>
+                        </object>
+                        <option>1</option>
+                        <flag>wxEXPAND</flag>
+                      </object>
+                    </object>
+                    <flag>wxEXPAND|wxALIGN_CENTRE</flag>
+                  </object>
+                  <object class="spacer">
+                    <option>1</option>
+                  </object>
+                  <object class="sizeritem">
+                    <object class="wxStaticText" name="">
+                      <label>WHITE</label>
+                      <style>wxALIGN_CENTRE</style>
+                      <fg>#FFFFFF</fg>
+                      <font>
+                        <size>16</size>
+                        <family>roman</family>
+                        <style>normal</style>
+                        <weight>bold</weight>
+                        <underlined>0</underlined>
+                        <face>Serif</face>
+                      </font>
+                    </object>
+                    <flag>wxEXPAND</flag>
+                  </object>
+                  <object class="sizeritem">
+                    <flag>wxEXPAND</flag>
+                    <object class="wxStaticText" name="label_whitenum">
+                      <label>0</label>
+                      <style>wxALIGN_CENTRE|wxST_NO_AUTORESIZE</style>
+                      <fg>#FFFFFF</fg>
+                      <font>
+                        <size>72</size>
+                        <family>swiss</family>
+                        <style>normal</style>
+                        <weight>bold</weight>
+                        <underlined>0</underlined>
+                        <face>Sans</face>
+                      </font>
+                    </object>
+                  </object>
+                </object>
+                <bg>#7F7F7F</bg>
+              </object>
+              <option>3</option>
+              <flag>wxEXPAND</flag>
+            </object>
+          </object>
+        </object>
+        <option>3</option>
+        <flag>wxEXPAND</flag>
+      </object>
+      <object class="sizeritem">
+        <object class="wxStaticBoxSizer">
+          <label>Debug Messages</label>
+          <orient>wxVERTICAL</orient>
+          <object class="sizeritem">
+            <object class="wxTextCtrl" name="textctrl_log">
+              <style>wxTE_MULTILINE|wxTE_READONLY</style>
+            </object>
+            <option>1</option>
+            <flag>wxEXPAND</flag>
+          </object>
+        </object>
+        <option>1</option>
+        <flag>wxEXPAND</flag>
+      </object>
+    </object>
+  </object>
+  <object class="wxDialog" name="dialog_choose_players">
+    <title>Choose Player</title>
+    <centered>1</centered>
+    <size>600,480</size>
+    <object class="wxBoxSizer">
+      <orient>wxVERTICAL</orient>
+      <object class="sizeritem">
+        <object class="wxBoxSizer">
+          <orient>wxHORIZONTAL</orient>
+          <object class="sizeritem">
+            <object class="wxStaticText" name="dialog_choose_players_a_name">
+              <label>unknown</label>
+              <style>wxALIGN_RIGHT|wxST_NO_AUTORESIZE</style>
+              <font>
+                <size>10</size>
+                <family>swiss</family>
+                <style>normal</style>
+                <weight>normal</weight>
+                <underlined>0</underlined>
+                <face>Sans</face>
+              </font>
+            </object>
+            <option>1</option>
+          </object>
+          <object class="spacer">
+            <size>20,0</size>
+          </object>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>VS</label>
+              <font>
+                <size>10</size>
+                <family>swiss</family>
+                <style>normal</style>
+                <weight>bold</weight>
+                <underlined>0</underlined>
+                <face>Sans</face>
+              </font>
+            </object>
+          </object>
+          <object class="spacer">
+            <size>20,0</size>
+          </object>
+          <object class="sizeritem">
+            <object class="wxStaticText" name="dialog_choose_players_b_name">
+              <label>unknown</label>
+              <style>wxALIGN_LEFT|wxST_NO_AUTORESIZE</style>
+              <font>
+                <size>10</size>
+                <family>swiss</family>
+                <style>normal</style>
+                <weight>normal</weight>
+                <underlined>0</underlined>
+                <face>Sans</face>
+              </font>
+            </object>
+            <option>1</option>
+          </object>
+        </object>
+        <flag>wxEXPAND|wxALIGN_CENTRE</flag>
+      </object>
+      <object class="spacer">
+        <size>0,10</size>
+      </object>
+      <object class="sizeritem">
+        <object class="wxBoxSizer">
+          <orient>wxHORIZONTAL</orient>
+          <object class="sizeritem">
+            <object class="wxBoxSizer">
+              <orient>wxVERTICAL</orient>
+              <object class="sizeritem">
+                <object class="wxRadioBox" name="dialog_choose_players_radiobox">
+                  <label></label>
+                  <content>
+                    <item>Player A</item>
+                    <item>Player B</item>
+                  </content>
+                  <selection>0</selection>
+                  <style>wxRA_VERTICAL</style>
+                </object>
+                <flag>wxEXPAND</flag>
+              </object>
+              <object class="sizeritem">
+                <object class="wxStaticBoxSizer">
+                  <orient>wxHORIZONTAL</orient>
+                  <object class="sizeritem">
+                    <object class="wxListBox" name="dialog_choose_players_listbox">
+                      <style>wxLB_SINGLE</style>
+                      <content/>
+                    </object>
+                    <option>1</option>
+                    <flag>wxEXPAND</flag>
+                  </object>
+                  <label>Available Players</label>
+                </object>
+                <option>1</option>
+                <flag>wxEXPAND</flag>
+              </object>
+            </object>
+            <option>10</option>
+            <flag>wxEXPAND</flag>
+          </object>
+          <object class="sizeritem">
+            <object class="wxStaticBoxSizer">
+              <label>Player Infomation</label>
+              <orient>wxVERTICAL</orient>
+              <object class="sizeritem">
+                <object class="wxStaticText" name="dialog_choose_players_playerinfo_name">
+                  <label>unknown</label>
+                  <style>wxST_NO_AUTORESIZE</style>
+                  <font>
+                    <size>16</size>
+                    <family>swiss</family>
+                    <style>normal</style>
+                    <weight>bold</weight>
+                    <underlined>0</underlined>
+                    <face>Sans</face>
+                  </font>
+                </object>
+                <option>2</option>
+                <flag>wxEXPAND</flag>
+              </object>
+              <object class="spacer">
+                <size>0,10</size>
+              </object>
+              <object class="sizeritem">
+                <object class="wxStaticText">
+                  <label>Summary:</label>
+                  <font>
+                    <size>9</size>
+                    <family>swiss</family>
+                    <style>normal</style>
+                    <weight>bold</weight>
+                    <underlined>0</underlined>
+                    <face>Sans</face>
+                  </font>
+                </object>
+              </object>
+              <object class="sizeritem">
+                <object class="wxStaticText" name="dialog_choose_players_playerinfo_summary">
+                  <label>unknown</label>
+                  <style>wxST_NO_AUTORESIZE</style>
+                </object>
+                <option>3</option>
+                <flag>wxEXPAND</flag>
+              </object>
+              <object class="spacer">
+                <size>0,10</size>
+              </object>
+              <object class="sizeritem">
+                <object class="wxStaticText">
+                  <label>Description:</label>
+                  <font>
+                    <size>9</size>
+                    <family>swiss</family>
+                    <style>normal</style>
+                    <weight>bold</weight>
+                    <underlined>0</underlined>
+                    <face>Sans</face>
+                  </font>
+                </object>
+              </object>
+              <object class="sizeritem">
+                <object class="wxStaticText" name="dialog_choose_players_playerinfo_description">
+                  <label>unknown</label>
+                  <style>wxST_NO_AUTORESIZE</style>
+                </object>
+                <option>8</option>
+                <flag>wxEXPAND</flag>
+              </object>
+              <object class="sizeritem">
+                <object class="wxStaticBoxSizer">
+                  <label>Arguments</label>
+                  <orient>wxHORIZONTAL</orient>
+                  <object class="sizeritem">
+                    <object class="wxListBox" name="dialog_choose_players_args_listbox">
+                      <content/>
+                    </object>
+                    <option>1</option>
+                    <flag>wxEXPAND</flag>
+                  </object>
+                  <object class="sizeritem">
+                    <object class="wxBoxSizer">
+                      <orient>wxVERTICAL</orient>
+                      <object class="sizeritem">
+                        <object class="wxButton" name="dialog_choose_players_args_add">
+                          <label>Add(&amp;A)</label>
+                        </object>
+                      </object>
+                      <object class="spacer">
+                        <size>0,5</size>
+                      </object>
+                      <object class="sizeritem">
+                        <object class="wxButton" name="dialog_choose_players_args_delete">
+                          <label>Delete(&amp;D)</label>
+                        </object>
+                      </object>
+                      <object class="spacer">
+                        <size>0,5</size>
+                      </object>
+                      <object class="sizeritem">
+                        <object class="wxButton" name="dialog_choose_players_args_reset">
+                          <label>Reset(&amp;R)</label>
+                        </object>
+                      </object>
+                    </object>
+                    <flag>wxALIGN_CENTRE</flag>
+                  </object>
+                </object>
+                <option>8</option>
+                <flag>wxEXPAND</flag>
+              </object>
+            </object>
+            <option>18</option>
+            <flag>wxEXPAND</flag>
+          </object>
+        </object>
+        <option>1</option>
+        <flag>wxEXPAND</flag>
+      </object>
+      <object class="spacer">
+        <size>0,20</size>
+      </object>
+      <object class="sizeritem">
+        <object class="wxBoxSizer">
+          <orient>wxHORIZONTAL</orient>
+          <object class="sizeritem">
+            <object class="wxButton" name="wxID_OK">
+              <default>1</default>
+              <label></label>
+            </object>
+          </object>
+          <object class="spacer">
+            <size>20,0</size>
+          </object>
+          <object class="sizeritem">
+            <object class="wxButton" name="wxID_CANCEL">
+              <label></label>
+            </object>
+          </object>
+        </object>
+        <flag>wxALIGN_CENTRE</flag>
+      </object>
+    </object>
+  </object>
+  <object class="wxDialog" name="preference_dialog">
+    <title>Preference</title>
+    <object class="wxBoxSizer">
+      <orient>wxVERTICAL</orient>
+      <object class="sizeritem">
+        <object class="wxStaticBoxSizer">
+          <label>Choose Language(*)</label>
+          <orient>wxHORIZONTAL</orient>
+          <object class="sizeritem">
+            <object class="wxChoice" name="choice_lang">
+              <content/>
+              <size>250,-1</size>
+            </object>
+            <option>1</option>
+          </object>
+          <object class="spacer">
+            <size>10,0</size>
+          </object>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>Current Language:</label>
+              <font>
+                <size>9</size>
+                <family>swiss</family>
+                <style>normal</style>
+                <weight>bold</weight>
+                <underlined>0</underlined>
+                <face>Sans</face>
+              </font>
+            </object>
+            <flag>wxALIGN_CENTRE_VERTICAL</flag>
+          </object>
+          <object class="spacer">
+            <size>10,0</size>
+          </object>
+          <object class="sizeritem">
+            <object class="wxStaticText" name="choice_lang_current">
+              <label>unknown</label>
+              <style>wxALIGN_CENTRE</style>
+            </object>
+            <option>1</option>
+            <flag>wxALIGN_CENTRE_VERTICAL</flag>
+          </object>
+        </object>
+        <flag>wxEXPAND</flag>
+      </object>
+      <object class="spacer">
+        <size>0,10</size>
+      </object>
+      <object class="sizeritem">
+        <object class="wxStaticBoxSizer">
+          <label>Choose Theme(*)</label>
+          <orient>wxHORIZONTAL</orient>
+          <object class="sizeritem">
+            <object class="wxChoice" name="choice_themename">
+              <content/>
+              <size>120,-1</size>
+            </object>
+            <option>1</option>
+          </object>
+          <object class="spacer">
+            <size>10,0</size>
+          </object>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>Current Theme:</label>
+              <font>
+                <size>9</size>
+                <family>swiss</family>
+                <style>normal</style>
+                <weight>bold</weight>
+                <underlined>0</underlined>
+                <face>Sans</face>
+              </font>
+            </object>
+            <flag>wxALIGN_CENTRE_VERTICAL</flag>
+          </object>
+          <object class="spacer">
+            <size>10,0</size>
+          </object>
+          <object class="sizeritem">
+            <object class="wxStaticText" name="choice_themename_current">
+              <label>unknown</label>
+              <style>wxALIGN_CENTRE</style>
+            </object>
+            <option>1</option>
+            <flag>wxALIGN_CENTRE_VERTICAL</flag>
+          </object>
+        </object>
+      </object>
+      <object class="spacer">
+        <size>0,10</size>
+      </object>
+      <object class="sizeritem">
+        <object class="wxStaticBoxSizer">
+          <label>Plugin Directories</label>
+          <orient>wxVERTICAL</orient>
+          <object class="sizeritem">
+            <object class="wxBoxSizer">
+              <orient>wxHORIZONTAL</orient>
+              <object class="sizeritem">
+                <object class="wxListBox" name="list_plugindirs">
+                  <content/>
+                  <size>0,200</size>
+                  <style>wxLB_SINGLE</style>
+                </object>
+                <option>1</option>
+                <flag>wxEXPAND</flag>
+              </object>
+              <object class="spacer">
+                <size>20,0</size>
+              </object>
+              <object class="sizeritem">
+                <object class="wxBoxSizer">
+                  <orient>wxVERTICAL</orient>
+                  <object class="sizeritem">
+                    <object class="wxButton" name="plugindir_add">
+                      <label>Add</label>
+                    </object>
+                  </object>
+                  <object class="spacer">
+                    <size>0,10</size>
+                  </object>
+                  <object class="sizeritem">
+                    <object class="wxButton" name="plugindir_remove">
+                      <label>Remove</label>
+                    </object>
+                  </object>
+                  <object class="spacer">
+                    <size>0,10</size>
+                  </object>
+                  <object class="sizeritem">
+                    <object class="wxButton" name="plugindir_moveup">
+                      <label>Move Up</label>
+                      <style></style>
+                    </object>
+                  </object>
+                  <object class="spacer">
+                    <size>0,10</size>
+                  </object>
+                  <object class="sizeritem">
+                    <object class="wxButton" name="plugindir_movedown">
+                      <label>Move Down</label>
+                    </object>
+                  </object>
+                </object>
+                <flag>wxALIGN_CENTRE_VERTICAL</flag>
+              </object>
+            </object>
+            <flag>wxEXPAND</flag>
+          </object>
+        </object>
+        <flag>wxEXPAND</flag>
+      </object>
+      <object class="spacer">
+        <size>0,10</size>
+      </object>
+      <object class="sizeritem">
+        <object class="wxStaticBoxSizer">
+          <label>Game Server Configuration</label>
+          <orient>wxHORIZONTAL</orient>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>Server TCP Port</label>
+            </object>
+            <flag>wxALIGN_CENTRE_VERTICAL</flag>
+          </object>
+          <object class="spacer">
+            <size>10,0</size>
+          </object>
+          <object class="sizeritem">
+            <object class="wxSpinCtrl" name="game_server_port">
+              <max>65536</max>
+            </object>
+          </object>
+        </object>
+        <flag>wxEXPAND</flag>
+      </object>
+      <object class="spacer">
+        <size>0,10</size>
+      </object>
+      <object class="sizeritem">
+        <object class="wxStaticBoxSizer">
+          <label>Game Speed</label>
+          <orient>wxVERTICAL</orient>
+          <object class="sizeritem">
+            <object class="wxChoice" name="choice_gamespeed">
+              <content>
+                <item>100</item>
+                <item>200</item>
+                <item>300</item>
+                <item>400</item>
+                <item>500</item>
+                <item>600</item>
+                <item>700</item>
+                <item>800</item>
+              </content>
+            </object>
+          </object>
+        </object>
+        <flag>wxEXPAND</flag>
+      </object>
+      <object class="spacer">
+        <size>0,10</size>
+      </object>
+      <object class="sizeritem">
+        <object class="wxStaticText">
+          <label>*NOTE* : Settings marked with '*' need to restart program to take effect</label>
+        </object>
+      </object>
+      <object class="spacer">
+        <size>0,20</size>
+      </object>
+      <object class="sizeritem">
+        <object class="wxBoxSizer">
+          <orient>wxHORIZONTAL</orient>
+          <object class="sizeritem">
+            <object class="wxButton" name="wxID_OK">
+              <label></label>
+            </object>
+          </object>
+          <object class="spacer">
+            <size>20,0</size>
+          </object>
+          <object class="sizeritem">
+            <object class="wxButton" name="wxID_CANCEL">
+              <label></label>
+            </object>
+          </object>
+        </object>
+        <flag>wxALIGN_CENTRE</flag>
+      </object>
+    </object>
+    <centered>1</centered>
+  </object>
+</resource>

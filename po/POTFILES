@@ -1,0 +1,10 @@
+	.././wx/configmgr.cpp \
+	.././wx/playerchoosedialog.cpp \
+	.././wx/thememgr.cpp \
+	.././wx/windowboardpainter.cpp \
+	.././wx/wxothello.cpp \
+	.././wx/wxothelloframe.cpp \
+	.././wx/wxothelloplayer.cpp \
+	.././wx/resources/frame.xrc.msgs.c \
+	.././players/lowai_plugin.cpp \
+	.././players/python/silverfish.py

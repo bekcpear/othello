@@ -1,0 +1,14 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+libothello_incdir=@OTHELLO_INCLUDEDIR@
+aipluginsdir=@OTHELLO_PLAYERPLUGINSDIR@
+aipypluginsdir=${aipluginsdir}/python
+
+Name: othello
+Description: Library providing the interfaces for the othello game 
+Version: @OTHELLO_VERSION@
+Requires: 
+Cflags: -I${libothello_incdir}
+Libs: -L${libdir} -lothello
+

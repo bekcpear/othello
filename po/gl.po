@@ -1,0 +1,523 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-06-30 11:10+0800\n"
+"PO-Revision-Date: 2008-01-01 11:46+0100\n"
+"Last-Translator: xabier <xabiercs@terra.es>\n"
+"Language-Team: LANGUAGE <xabiercs@terr.es>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Galician\n"
+"X-Poedit-Country: SPAIN\n"
+
+#: .././wx/configmgr.cpp:86
+msgid "Application Default Language"
+msgstr "Idioma por Defecto da Aplicación"
+
+#: .././wx/configmgr.cpp:87
+msgid "System Default Language"
+msgstr "Idioma por Defecto do Sistema"
+
+#: .././wx/configmgr.cpp:243
+msgid "Choose a plugin directory"
+msgstr "Escolle un directorio de Plugin"
+
+#: .././wx/playerchoosedialog.cpp:89
+msgid "Human Player"
+msgstr "Xogador Humano"
+
+#: .././wx/playerchoosedialog.cpp:91
+msgid "You control this player with your mouse. Use left click to go,and right click to pass"
+msgstr "Controlas este xogador co rato. Usa o botón esquerdo para mover e o dereito para pasar"
+
+#: .././wx/playerchoosedialog.cpp:97
+msgid "Null Player"
+msgstr "Xogador Nulo"
+
+#: .././wx/playerchoosedialog.cpp:99
+msgid "This will not create any local player. It's used when playing network game"
+msgstr "Esto non creará ningún xogador local. Esto é usado para xogos en rede"
+
+#: .././wx/playerchoosedialog.cpp:150
+msgid "Argument Name"
+msgstr "Nome do Argumento"
+
+#: .././wx/playerchoosedialog.cpp:150
+#: .././wx/playerchoosedialog.cpp:157
+msgid "Input text"
+msgstr "Texto de entrada"
+
+#: .././wx/playerchoosedialog.cpp:153
+msgid "Argument name should not contain '='"
+msgstr "O nome do argumento non debe conter'='"
+
+#: .././wx/playerchoosedialog.cpp:154
+msgid "Invalid Arguments"
+msgstr "Argumentos inválidos"
+
+#: .././wx/playerchoosedialog.cpp:157
+msgid "Argument Value"
+msgstr "Valor do Argumento"
+
+#: .././wx/wxothelloframe.cpp:93
+#, c-format
+msgid ""
+"Game Exception Catched : \n"
+"%s\n"
+msgstr ""
+"Captura dunha Excepción no Xogo : \n"
+"%s\n"
+
+#: .././wx/wxothelloframe.cpp:172
+#, c-format
+msgid ""
+"Load theme \"%s\" failed :\n"
+"%s\n"
+"Try to load default theme now"
+msgstr ""
+"A carga do fondo \"%s\" fallou :\n"
+"%s\n"
+"Trata de carga-lo fondo por defecto"
+
+#: .././wx/wxothelloframe.cpp:177
+#: .././wx/wxothelloframe.cpp:184
+#: .././wx/wxothelloframe.cpp:205
+#: .././wx/wxothelloframe.cpp:212
+msgid "Theme System Warning"
+msgstr "Alerta do Sistema de Fondos"
+
+#: .././wx/wxothelloframe.cpp:181
+#, c-format
+msgid ""
+"Load default theme failed :\n"
+"%s\n"
+"Please check your installation"
+msgstr ""
+"A carga do fondo por defecto fallou :\n"
+"%s\n"
+"Por favor revisa a túa instalación"
+
+#: .././wx/wxothelloframe.cpp:227
+#, c-format
+msgid ""
+"Plugin system warning :\n"
+"%s\n"
+msgstr ""
+"Alerta do Sitema de Plugins :\n"
+"%s\n"
+
+#: .././wx/wxothelloframe.cpp:229
+msgid "Plugin System Warnings"
+msgstr "Alertas do Sistema de Plugins"
+
+#: .././wx/wxothelloframe.cpp:287
+#, c-format
+msgid ""
+"Player create failed :\n"
+"%s\n"
+msgstr ""
+"Fallou o xogador creado :\n"
+"%s\n"
+
+#: .././wx/wxothelloframe.cpp:289
+msgid "Player Create Failed"
+msgstr "Fallou o Xogador Creado"
+
+#: .././wx/wxothelloframe.cpp:296
+#, c-format
+msgid ""
+"Player create with warnings :\n"
+"%s\n"
+msgstr ""
+"Xogador creado con alertas (perigos) :\n"
+"%s\n"
+
+#: .././wx/wxothelloframe.cpp:298
+msgid "Player Create Warning"
+msgstr "Xogador Creado Problemático"
+
+#: .././wx/wxothelloframe.cpp:314
+#, c-format
+msgid ""
+"Game server create failed :\n"
+"%s\n"
+msgstr ""
+"O servidor de xogos creado fallou :\n"
+"%s\n"
+
+#: .././wx/wxothelloframe.cpp:316
+#: .././wx/wxothelloframe.cpp:337
+msgid "Create Server Failed"
+msgstr "Fallou o Servidor Creado"
+
+#: .././wx/wxothelloframe.cpp:325
+msgid "Input server address(localhost, foo.com:26417, etc...)"
+msgstr "Inseri-la dirección do servidor(localhost, foo.com:26417,ect...)"
+
+#: .././wx/wxothelloframe.cpp:326
+msgid "Server Adress"
+msgstr "Dirección do Servidor"
+
+#: .././wx/wxothelloframe.cpp:336
+msgid "Invalid port number\n"
+msgstr "Número de porto non válido\n"
+
+#: .././wx/wxothelloframe.cpp:348
+#, c-format
+msgid ""
+"Game client create failed :\n"
+"%s\n"
+msgstr ""
+"Fallou o cliente de xogo creado :\n"
+"%s\n"
+
+#: .././wx/wxothelloframe.cpp:350
+msgid "Create Client Failed"
+msgstr "Fallou o Cliente Creado"
+
+#: .././wx/wxothelloframe.cpp:380
+msgid "Stopping Game..."
+msgstr "Parando o Xogo..."
+
+#: .././wx/wxothelloframe.cpp:433
+msgid "Othello is a classic strategy game, also known as Reversi. Its objective is to finish the game with the greater amount of pieces (circles) of the same color."
+msgstr "Othello é un xogo clásico de estratexia, coñecido tamén coma Reversi. O seu obxetivo é acabar con máis pezas (circulos) que o teu contrincante"
+
+#: .././wx/wxothelloframe.cpp:451
+msgid "About wxOthello"
+msgstr "Acerca de wxOthello"
+
+#: .././wx/wxothelloframe.cpp:516
+msgid "Game stopped"
+msgstr "Xogo Parado"
+
+#: .././wx/wxothelloframe.cpp:538
+msgid "Game Infomation"
+msgstr "Información do Xogo"
+
+#: .././wx/wxothelloframe.cpp:584
+msgid "Waiting Players..."
+msgstr "Esperando por xogadores"
+
+#: .././wx/wxothelloframe.cpp:593
+msgid "Wait All Players Ready..."
+msgstr "Esperando a que tódolos xogadores esteán listos..."
+
+#: .././wx/wxothelloframe.cpp:654
+#, c-format
+msgid "Turn of Black, step %d"
+msgstr "Turno das Negras, movemento %d"
+
+#: .././wx/wxothelloframe.cpp:657
+#, c-format
+msgid "Turn of White, step %d"
+msgstr "Turno das Brancas, movemento %d"
+
+#: .././wx/wxothelloframe.cpp:663
+msgid "Black Win!"
+msgstr "As Negras Gañan!"
+
+#: .././wx/wxothelloframe.cpp:672
+msgid "White Win!"
+msgstr "As Brancas Gañan!"
+
+#: .././wx/wxothelloframe.cpp:681
+msgid "Draw Game!"
+msgstr "Deseña-lo Xogo"
+
+#: .././wx/wxothelloframe.cpp:690
+msgid "Game Over"
+msgstr "Xogo Rematado"
+
+#: .././wx/wxothelloframe.cpp:691
+msgid "Continue?"
+msgstr "Continuar?"
+
+#: .././wx/resources/frame.xrc.msgs.c:1
+msgid "Othello"
+msgstr "Othello"
+
+#: .././wx/resources/frame.xrc.msgs.c:2
+msgid "&Game"
+msgstr "&Xogo"
+
+#: .././wx/resources/frame.xrc.msgs.c:3
+msgid "&Start"
+msgstr "&Comezar"
+
+#: .././wx/resources/frame.xrc.msgs.c:4
+msgid "Single &Machine Game\tCtrl+1"
+msgstr "Xogar Contra a &Máquina"
+
+#: .././wx/resources/frame.xrc.msgs.c:5
+msgid "Start a single machine game"
+msgstr "Comezar un xogo contra a máquina"
+
+#: .././wx/resources/frame.xrc.msgs.c:6
+msgid "Game &Server\tCtrl+2"
+msgstr "&Servidor de Xogo\tCtrl+2"
+
+#: .././wx/resources/frame.xrc.msgs.c:7
+msgid "Start a network game as server"
+msgstr "Iniciar un xogo en rede coma servidor"
+
+#: .././wx/resources/frame.xrc.msgs.c:8
+msgid "Game &Client\tCtrl+3"
+msgstr "C&liente de Xogo\tCtrl+3 "
+
+#: .././wx/resources/frame.xrc.msgs.c:9
+msgid "Join a network game"
+msgstr "Xogar un xogo en rede"
+
+#: .././wx/resources/frame.xrc.msgs.c:10
+msgid "Select the type of game"
+msgstr "Seleccionar un tipo de xogo"
+
+#: .././wx/resources/frame.xrc.msgs.c:11
+msgid "S&top\tCtrl+E"
+msgstr "S&top\tCtrl+E"
+
+#: .././wx/resources/frame.xrc.msgs.c:12
+msgid "Stop the game"
+msgstr "Para-lo xogo"
+
+#: .././wx/resources/frame.xrc.msgs.c:13
+msgid "&Restart\tCtrl+R"
+msgstr "&Reiniciar\tCtrl+R"
+
+#: .././wx/resources/frame.xrc.msgs.c:14
+msgid "Restart the game"
+msgstr "Reinicia-lo xogo"
+
+#: .././wx/resources/frame.xrc.msgs.c:15
+msgid "&Players\tCtrl+P"
+msgstr "Xoga&dores\tCtrl+P"
+
+#: .././wx/resources/frame.xrc.msgs.c:16
+msgid "Config the players"
+msgstr "Configura-los xogadores"
+
+#: .././wx/resources/frame.xrc.msgs.c:17
+msgid "&Quit\tCtrl+Q"
+msgstr "Sa&ír\tCtrl+Q"
+
+#: .././wx/resources/frame.xrc.msgs.c:18
+msgid "Exit program"
+msgstr "Saír do programa"
+
+#: .././wx/resources/frame.xrc.msgs.c:19
+msgid "&Settings"
+msgstr "Propiedade&s"
+
+#: .././wx/resources/frame.xrc.msgs.c:20
+msgid "Prefere&nce"
+msgstr "Prefere&ncias"
+
+#: .././wx/resources/frame.xrc.msgs.c:21
+msgid "Configure program preference"
+msgstr "Configurar preferencias do programa"
+
+#: .././wx/resources/frame.xrc.msgs.c:22
+msgid "&Help"
+msgstr "&Axuda"
+
+#: .././wx/resources/frame.xrc.msgs.c:23
+msgid "&About"
+msgstr "Ac&erca de"
+
+#: .././wx/resources/frame.xrc.msgs.c:24
+msgid "About the program"
+msgstr "Acerca do programa"
+
+#: .././wx/resources/frame.xrc.msgs.c:25
+msgid "BLACK"
+msgstr "NEGRAS"
+
+#: .././wx/resources/frame.xrc.msgs.c:26
+#: .././wx/resources/frame.xrc.msgs.c:27
+#: .././wx/resources/frame.xrc.msgs.c:29
+#: .././wx/resources/frame.xrc.msgs.c:31
+msgid "0"
+msgstr "0"
+
+#: .././wx/resources/frame.xrc.msgs.c:28
+msgid ":"
+msgstr ":"
+
+#: .././wx/resources/frame.xrc.msgs.c:30
+msgid "WHITE"
+msgstr "BRANCAS"
+
+#: .././wx/resources/frame.xrc.msgs.c:32
+msgid "Debug Messages"
+msgstr "Mensaxes do Depurador"
+
+#: .././wx/resources/frame.xrc.msgs.c:33
+msgid "Choose Player"
+msgstr "Escoller Xogador"
+
+#: .././wx/resources/frame.xrc.msgs.c:34
+#: .././wx/resources/frame.xrc.msgs.c:36
+#: .././wx/resources/frame.xrc.msgs.c:41
+#: .././wx/resources/frame.xrc.msgs.c:43
+#: .././wx/resources/frame.xrc.msgs.c:45
+#: .././wx/resources/frame.xrc.msgs.c:53
+#: .././wx/resources/frame.xrc.msgs.c:56
+msgid "unknown"
+msgstr "descoñecido"
+
+#: .././wx/resources/frame.xrc.msgs.c:35
+msgid "VS"
+msgstr "VS"
+
+#: .././wx/resources/frame.xrc.msgs.c:37
+msgid "Player A"
+msgstr "Xogador A"
+
+#: .././wx/resources/frame.xrc.msgs.c:38
+msgid "Player B"
+msgstr "Xogador B"
+
+#: .././wx/resources/frame.xrc.msgs.c:39
+msgid "Available Players"
+msgstr "Xogadores Dispoñibles"
+
+#: .././wx/resources/frame.xrc.msgs.c:40
+msgid "Player Infomation"
+msgstr "Información do Xogador"
+
+#: .././wx/resources/frame.xrc.msgs.c:42
+msgid "Summary:"
+msgstr "Sumario"
+
+#: .././wx/resources/frame.xrc.msgs.c:44
+msgid "Description:"
+msgstr "Descrición:"
+
+#: .././wx/resources/frame.xrc.msgs.c:46
+msgid "Arguments"
+msgstr "Argumentos"
+
+#: .././wx/resources/frame.xrc.msgs.c:47
+msgid "Add(&A)"
+msgstr "Engadir(&E)"
+
+#: .././wx/resources/frame.xrc.msgs.c:48
+msgid "Delete(&D)"
+msgstr "Borrar(&B)"
+
+#: .././wx/resources/frame.xrc.msgs.c:49
+msgid "Reset(&R)"
+msgstr "Resetear(&R)"
+
+#: .././wx/resources/frame.xrc.msgs.c:50
+msgid "Preference"
+msgstr "Preferencias"
+
+#: .././wx/resources/frame.xrc.msgs.c:51
+msgid "Choose Language(*)"
+msgstr "Escoller Idioma(*)"
+
+#: .././wx/resources/frame.xrc.msgs.c:52
+msgid "Current Language:"
+msgstr "Idioma Actual:"
+
+#: .././wx/resources/frame.xrc.msgs.c:54
+msgid "Choose Theme(*)"
+msgstr "Escolla Fondo(*)"
+
+#: .././wx/resources/frame.xrc.msgs.c:55
+msgid "Current Theme:"
+msgstr "Fondo Actual:"
+
+#: .././wx/resources/frame.xrc.msgs.c:57
+msgid "Plugin Directories"
+msgstr "Directorios de Plugins"
+
+#: .././wx/resources/frame.xrc.msgs.c:58
+msgid "Add"
+msgstr "Engadir"
+
+#: .././wx/resources/frame.xrc.msgs.c:59
+msgid "Remove"
+msgstr "Borrar"
+
+#: .././wx/resources/frame.xrc.msgs.c:60
+msgid "Move Up"
+msgstr "Mover Arriba"
+
+#: .././wx/resources/frame.xrc.msgs.c:61
+msgid "Move Down"
+msgstr "Mover Abaixo"
+
+#: .././wx/resources/frame.xrc.msgs.c:62
+msgid "Game Server Configuration"
+msgstr "Configuración do Sevidor de Xogo"
+
+#: .././wx/resources/frame.xrc.msgs.c:63
+msgid "Server TCP Port"
+msgstr "Porto do Servidor TCP"
+
+#: .././wx/resources/frame.xrc.msgs.c:64
+msgid "Game Speed"
+msgstr "Velocidade do Xogo"
+
+#: .././wx/resources/frame.xrc.msgs.c:65
+msgid "100"
+msgstr "100"
+
+#: .././wx/resources/frame.xrc.msgs.c:66
+msgid "200"
+msgstr "200"
+
+#: .././wx/resources/frame.xrc.msgs.c:67
+msgid "300"
+msgstr "300"
+
+#: .././wx/resources/frame.xrc.msgs.c:68
+msgid "400"
+msgstr "400"
+
+#: .././wx/resources/frame.xrc.msgs.c:69
+msgid "500"
+msgstr "500"
+
+#: .././wx/resources/frame.xrc.msgs.c:70
+msgid "600"
+msgstr "600"
+
+#: .././wx/resources/frame.xrc.msgs.c:71
+msgid "700"
+msgstr "700"
+
+#: .././wx/resources/frame.xrc.msgs.c:72
+msgid "800"
+msgstr "800"
+
+#: .././wx/resources/frame.xrc.msgs.c:73
+msgid "*NOTE* : Settings marked with '*' need to restart program to take effect"
+msgstr "*AVISO* : As propiedades marcadas cun '*' precisan ser reiniciadas para ter efecto"
+
+#: .././players/lowai_plugin.cpp:45
+msgid "Lowai Player"
+msgstr "Xogador AI Malo"
+
+#: .././players/lowai_plugin.cpp:46
+msgid "Othello Lowai Player. Use simple score measure technology."
+msgstr "Xogador AI Malo de Othello. Usa unha simple tegnoloxía de medida de tanteo"
+
+#: .././players/python/silverfish.py:30
+msgid "Silverfish Player"
+msgstr "Xogador Prata"
+
+#: .././players/python/silverfish.py:31
+msgid "Silverfish player. Go position where the most amount of grids would be turned"
+msgstr "Xogador Prata. Ir a posición onde se poidan cambiar máis cuadrículas"
+
